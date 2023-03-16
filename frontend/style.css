@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Poppins:wght@300;400;500;700&family=Tilt+Warp&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', cursive;
+    color: rgb(60, 68, 64);
+}
+p, button{
+    color: rgb(60, 68, 64);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.06fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+

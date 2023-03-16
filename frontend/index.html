@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/css/ace.min.css " rel="stylesheet">
+
+</head>
+<body>
+    <div id="message-box" class="z-[100] absolute text-white font-bold top-[-100px] left-0 right-0 ml-auto mr-auto w-[300px] shadow-md rounded duration-500 ease-in">
+        <div id="message" class="relative flex justify-center items-center p-2">
+
+        </div>
+    </div>
+
+    <main class="w-2/3 mx-auto h-[100vh] py-[12%]" id="main-login">
+        <div class="flex flex-col gap-10 justify-start items-center bg-[#fafafa] shadow-md p-10 px-20 rounded w-fit mx-auto backdrop-blur-lg">
+            <h1 class="text-5xl font-bold">Virtual Lab Login</h1>
+            <form action="" id="passForm" class="flex flex-col items-center justify-center gap-10">
+                <input class="border-2 rounded px-2 py-1" type="password" name="password" placeholder="password" required>
+                <button type="submit" class="bg-green-400 px-4 py-2 rounded-full text-white">Login</button>
+            </form>
+    
+        </div>
+    </main>
+
+    <section class="hidden grid grid-cols-2 gap-5 h-[100vh]" id="code-area">
+        <div class="w-full h-full relative parent">
+            <div class="h-full w-full" id="editor"></div>
+            <div class="bg-[#2AA56C] flex justify-start items-center px-10">
+                <button id="run-code" class="my-2 bg-white px-4 py-2 font-bold hover:shadow-md">Run Code</button>
+            </div>
+        </div>
+        <div class="grid grid-rows-2 gap-10 p-5">
+            <div class="bg-gray-600 rounded"></div>
+            <div class="bg-gray-400 rounded"></div>
+        </div>
+    </section>
+    <!-- v3Y58$%zX*4L -->
+    <script src=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/src-min-noconflict/ace.min.js"></script>
+    <script src="script.js" type="module"></script>
+    <script src="code.js" type="module"></script>
+</body>
+</html>
+
