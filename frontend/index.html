@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
     <link href=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/css/ace.min.css " rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
 
 </head>
 <body>
@@ -29,21 +30,43 @@
     </main>
 
     <section class="hidden grid grid-cols-2 gap-5 h-[100vh]" id="code-area">
-        <div class="w-full h-full relative parent">
+        <!-- <div class="w-full h-full relative parent">
             <div class="h-full w-full" id="editor"></div>
             <div class="bg-[#2AA56C] flex justify-start items-center px-10">
                 <button id="run-code" class="my-2 bg-white px-4 py-2 font-bold hover:shadow-md">Run Code</button>
             </div>
+        </div> -->
+        <div class="w-2/3 mx-auto h-full p-10 my-10">
+            <h1 class="text-2xl font-bold">Upload binary file.</h1>
+            <div class="flex flex-col justify-start items-start p-10 shadow-md my-10 rounded bg-[#fafafa] gap-10">
+                <form action="" id="file-form" enctype="multipart/form-data">
+                    <input type="file" id="file">
+                    <button type="submit" class="my-2 bg-[#333] text-white px-4 py-2 font-bold hover:shadow-md">Run</button>
+                </form>
+            </div>
         </div>
         <div class="grid grid-rows-2 gap-10 p-5">
-            <div class="bg-gray-600 rounded"></div>
+            <div class="bg-gray-600 rounded">
+                <video id='hls-example' class="video-js vjs-default-skin w-full h-full" autoplay controls>
+                    <source type="application/x-mpegURL" src="http://52.66.197.49:8088/hls/obs.m3u8">
+                </video>
+            </div>
             <div class="bg-gray-400 rounded"></div>
         </div>
     </section>
     <!-- v3Y58$%zX*4L -->
-    <script src=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/src-min-noconflict/ace.min.js"></script>
+    <!-- <script src=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/src-min-noconflict/ace.min.js"></script> -->
     <script src="script.js" type="module"></script>
     <script src="code.js" type="module"></script>
+
+    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+    <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+
+    <script>
+        let player = videojs('hls-example');
+        player.play();
+    </script>
 </body>
 </html>
 

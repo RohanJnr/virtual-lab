@@ -7,17 +7,19 @@ const message = document.getElementById("message")
 const mainLogin = document.getElementById("main-login")
 const codeArea = document.getElementById("code-area")
 
-const runCodeBtn = document.getElementById("run-code")
 
 
-let editor = ace.edit("editor");
-editor.setTheme("ace/theme/monokai");
-editor.getSession().setMode("ace/mode/javascript");
+let socket = null;
+
+// let editor = ace.edit("editor");
+// editor.setTheme("ace/theme/monokai");
+// editor.getSession().setMode("ace/mode/javascript");
 
 const COLORS = {
     "red": "rgb(255, 109, 109)",
     "green": "rgb(42, 165, 108)"
 }
+
 
 const setMessage = (messageText, color) => {
     message.innerText = messageText
@@ -33,7 +35,6 @@ const setMessage = (messageText, color) => {
 
 
 
-let socket = null;
 
 
 const initEditor = () => {
