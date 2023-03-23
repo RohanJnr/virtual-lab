@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+
+
+<section class="bg-gray-50 min-h-[100vh]">
+    <div class="w-4/5 mx-auto py-10">
+        <h1 class="text-center text-[#690067]">Add New Sketch Binary</h1>
+        <div>
+            <form enctype="multipart/form-data" method="post" class="flex flex-col w-full justify-start gap-10">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="flex justify-center items-center">
+                    <button class="my-10 px-4 py-2 font-semibold text-white rounded shadow-md text-lg bg-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

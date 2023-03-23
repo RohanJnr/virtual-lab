@@ -1,0 +1,63 @@
+{% load static %}
+
+<!-- Navbar -->
+<header class="z-10 w-full shadow-md border-b-2 border-[#690067]">
+    <nav class="w-full md:w-4/5 mx-auto px-4 lg:px-0">
+        <!-- Flex container -->
+        <div class="flex items-center justify-between md:p-3 md:px-5">
+            <!-- Logo -->
+            <div class="flex justify-center items-center gap-10">
+
+                <a href="" class="flex items-center justify-center">
+                    <img class=" h-[50px] md:h-[70px]" src="{% static 'images/pesu_logo.png' %}" alt="something" />
+                </a>
+                <a href="" class="flex items-center justify-center">
+                    <img class=" h-[50px] md:h-[70px]" src="{% static 'images/ieee_ras_logo.png' %}" alt="something" />
+                </a>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="hidden pt-2 lg:flex justify-center items-center gap-5">
+
+
+                <a href="" class="underline-hover-effect ">Home</a>
+                <a href="" class="underline-hover-effect ">About</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'robot:dashboard' %}" class="underline-hover-effect ">Dashboard</a>
+                <a href="{% url 'robot:remote_lab' %}" class="underline-hover-effect ">Remote lab</a>
+                <a href="" class="underline-hover-effect ">Logout</a>
+                {% else %}
+                <a href="" class="underline-hover-effect ">Login</a>
+                {% endif %}
+
+            </div>
+            <!-- Hamburger Icon -->
+            <button id="menu-btn"
+                class="hamburger lg:hidden focus:outline-none flex flex-col items-center justify-around">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden z-10">
+            <div id="menu"
+                class="z-10 absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="" class="underline-hover-effect font-semibold">Home</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const btn = document.getElementById('menu-btn')
+    const nav = document.getElementById('menu')
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open')
+        nav.classList.toggle('flex')
+        nav.classList.toggle('hidden')
+    })
+
+</script>
