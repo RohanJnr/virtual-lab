@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="bg-gray-50 min-h-[100vh]">
+    <div class="w-4/5 mx-auto py-20">
+        <h1 class="text-center text-[#690067]">Dashboard</h1>
+        <div>
+            {% if messages %}
+            <ul class="p-10 bg-white border-[1px] shadow-sm margin-0">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% if object_list %}
+        <div>
+            <div class="flex justify-between items-center">
+                <h3>Sketch Binaries</h3>
+                <a href="{% url 'robot:add_sketch' %}" class="px-4 py-2 font-semibold text-white rounded shadow-md text-lg bg-primary">Add Sketch Binary</a>
+            </div>
+            {% for sketch in object_list %}
+            <div class="p-5 bg-white margin-[1px] shadow-sm rounded my-10">
+                <h4>{{ sketch.title }}</h4>
+                <small class="text-lg">File: 
+                    <a class="text-blue-600" href="{{ sketch.binary_file.url }}">{{ sketch.binary_file.name }}</a>
+                </small>
+                <div class="my-5">
+                    <a href="{% url 'robot:add_sketch' %}" class="px-2 py-1 font-semibold text-white rounded hover:shadow-md duration-200 ease-in bg-green-600">Run Binary in Remote Lab</a>
+                </div>
+                <p class="my-10">{{ sketch.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-lg p-20 border-dashed bg-white border-[#525252] border-2 my-20 flex flex-col justify-center items-center gap-10">
+            <span class="block text-5xl font-bold">Ops !</span>
+            You do not have any Sketch Binaries saved.
+            <a href="{% url 'robot:add_sketch' %}" class="px-4 py-2 font-semibold text-white rounded shadow-md text-lg bg-primary">Add Sketch Binary</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+{% endblock %}

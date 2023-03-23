@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link href=" https://cdn.jsdelivr.net/npm/ace-builds@1.15.3/css/ace.min.css " rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="bg-gray-50 min-h-[100vh]">
+    <div class="w-4/5 mx-auto py-20">
+        <h1>Remote Lab Console</h1>
+        <div class="grid grid-cols-2 h-full gap-10">
+            <div class="h-full my-10">
+                <form action="" id="select-form">
+                    <label for="sketch-binary" class="text-lg block mb-2 font-medium text-gray-900">Select a Sketch binary</label>
+                    <div class="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 border-r-4 border-r-transparent">
+                        <select id="selectSketch" class="bg-white border block w-full p-2.5">
+                            {% for sketch in sketches %}
+                            <option value="{{ sketch.binary_file.url }}">{{ sketch.title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="my-10 px-4 py-2 font-semibold text-white rounded shadow-md text-lg bg-secondary" type="submit">Run Sketch</button>
+                </form>
+            </div>
+            <div class="w-full">
+                <video id='hls-example' class="video-js vjs-default-skin w-full h-full aspect-video" autoplay controls>
+                    <source type="application/x-mpegURL" src="http://52.66.197.49:8088/hls/obs.m3u8">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+<script>
+    let player = videojs('hls-example');
+    player.play();
+
+    const selectForm = document.getElementById("select-form")
+    const select = document.getElementById("selectSketch")
+
+    selectForm.addEventListener("submit", e => {
+        e.preventDefault()
+
+        console.log(select.value)
+    })
+</script>
+
+{% endblock %}
