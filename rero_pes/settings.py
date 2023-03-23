@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%0$-%*0s!^fwp_rwyx32#p!61k%@pjzcjot5(ui^m6%_jh@3s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'base',
     'robot',
 
+    'daphne',
     'crispy_forms',
     'crispy_tailwind',
 
@@ -147,3 +148,13 @@ AWS_QUERYSTRING_AUTH = False
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+ASGI_APPLICATION = "rero_pes.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}

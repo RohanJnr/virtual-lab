@@ -42,10 +42,28 @@
     const selectForm = document.getElementById("select-form")
     const select = document.getElementById("selectSketch")
 
+    const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/exec'
+        );
+
+    
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        console.log(data)
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
     selectForm.addEventListener("submit", e => {
         e.preventDefault()
 
-        console.log(select.value)
+        chatSocket.send(JSON.stringify({
+                'message': select.value
+            }));
     })
 </script>
 
