@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ieee ras remote robotics site"
+version = "0.1.0"
+description = "Website to handling interaction with IEEE RAS Remote Robotics Lab of PES University."
+authors = ["Rohanjnr <rohanjnr44@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
