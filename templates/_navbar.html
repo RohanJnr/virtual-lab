@@ -1,18 +1,21 @@
 {% load static %}
 
 <!-- Navbar -->
-<header class="z-10 w-full shadow-md border-b-2 border-[#690067]">
+<header class="z-10 w-full absolute bg-radial">
     <nav class="w-full md:w-4/5 mx-auto px-4 lg:px-0">
         <!-- Flex container -->
         <div class="flex items-center justify-between md:p-3 md:px-5">
             <!-- Logo -->
             <div class="flex justify-center items-center gap-10">
 
-                <a href="" class="flex items-center justify-center">
-                    <img class=" h-[50px] md:h-[70px]" src="{% static 'images/pesu_logo.png' %}" alt="something" />
+                <a href="/" class="flex items-center justify-center">
+                    <img class=" h-[50px] md:h-[60px] w-auto invert-[1] brightness-0" src="{% static 'images/pesu_logo.png' %}" alt="something" />
                 </a>
-                <a href="" class="flex items-center justify-center">
-                    <img class=" h-[50px] md:h-[70px]" src="{% static 'images/ieee_ras_logo.png' %}" alt="something" />
+                <a href="/" class="flex items-center justify-center">
+                    <img class=" h-[50px] md:h-[60px] w-auto invert-[1] brightness-0" src="{% static 'images/ieee_ras_logo.png' %}" alt="something" />
+                </a>
+                <a href="/" class="flex items-center justify-center">
+                    <img class=" h-[50px] md:h-[40px] w-auto invert-[1] brightness-0" src="{% static 'images/crais.png' %}" alt="something" />
                 </a>
             </div>
 
@@ -20,15 +23,15 @@
             <div class="hidden pt-2 lg:flex justify-center items-center gap-5">
 
 
-                <a href="" class="underline-hover-effect ">Home</a>
-                <a href="" class="underline-hover-effect ">About</a>
+                <a href="/" class="underline-hover-effect text-white font-bold">Home</a>
+                <!-- <a href="" class="underline-hover-effect ">About</a> -->
                 {% if user.is_authenticated %}
-                <a href="{% url 'robot:dashboard' %}" class="underline-hover-effect ">Dashboard</a>
-                <a href="{% url 'robot:remote_lab' %}" class="underline-hover-effect ">Remote lab</a>
-                <a href="" class="underline-hover-effect ">Logout</a>
+                <!-- <a href="{% url 'robot:dashboard' %}" class="underline-hover-effect ">Dashboard</a> -->
+                <a href="{% url 'robot:remote_lab' %}" class="underline-hover-effect text-white font-bold">Remote lab</a>
+                <!-- <a href="" class="underline-hover-effect ">Logout</a>
                 {% else %}
                 <a href="" class="underline-hover-effect ">Login</a>
-                {% endif %}
+                {% endif %} -->
 
             </div>
             <!-- Hamburger Icon -->
