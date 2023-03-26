@@ -27,7 +27,7 @@
                     <a class="text-blue-600" href="{{ sketch.binary_file.url }}">{{ sketch.binary_file.name }}</a>
                 </small>
                 <div class="my-5">
-                    <a href="{% url 'robot:add_sketch' %}" class="px-2 py-1 font-semibold text-white rounded hover:shadow-md duration-200 ease-in bg-green-600">Run Binary in Remote Lab</a>
+                    <a href="{% url 'robot:remote_lab' %}" class="px-2 py-1 font-semibold text-white rounded hover:shadow-md duration-200 ease-in bg-green-600">Run Binary in Remote Lab</a>
                 </div>
                 <p class="my-10">{{ sketch.description }}</p>
             </div>
