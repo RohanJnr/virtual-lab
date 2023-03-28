@@ -75,21 +75,21 @@
 
                 <div class="tab-panel" :class="{ 'active': activeTab === 0 }"
                     x-show.transition.in.opacity.duration.600="activeTab === 0">
-                    <video id='hls-example-1' class="video-js vjs-default-skin w-full h-auto aspect-video rounded"
+                    <video id='hls-example-1' class="video-js vjs-default-skin w-full h-auto aspect-[8/9] rounded"
                         autoplay controls>
                         <source type="application/x-mpegURL" src="http://52.66.197.49:8088/hls/obs1.m3u8">
                     </video>
                 </div>
                 <div class="tab-panel" :class="{ 'active': activeTab === 1 }"
                     x-show.transition.in.opacity.duration.600="activeTab === 1">
-                    <video id='hls-example-2' class="video-js vjs-default-skin w-full h-auto aspect-video rounded"
+                    <video id='hls-example-2' class="video-js vjs-default-skin w-full h-auto aspect-[8/9] rounded"
                         autoplay controls>
                         <source type="application/x-mpegURL" src="http://52.66.197.49:8088/hls/obs2.m3u8">
                     </video>
                 </div>
                 <div class="tab-panel" :class="{ 'active': activeTab === 2 }"
                     x-show.transition.in.opacity.duration.600="activeTab === 2">
-                    <video id='hls-example-3' class="video-js vjs-default-skin w-full h-auto aspect-video rounded"
+                    <video id='hls-example-3' class="video-js vjs-default-skin w-full h-auto aspect-[8/9] rounded"
                         autoplay controls>
                         <source type="application/x-mpegURL" src="http://52.66.197.49:8088/hls/obs3.m3u8">
                     </video>
@@ -104,13 +104,13 @@
 <!-- <script src="https://vjs.zencdn.net/7.2.3/video.js"></script> -->
 <script>
     let player1 = videojs('hls-example-1');
-    player.play();
+    player1.play();
 
     let player2 = videojs('hls-example-2');
-    player.play();
+    player2.play();
 
     let player3 = videojs('hls-example-3');
-    player.play();
+    player3.play();
 
     const output = document.getElementById("output")
     const selectForm = document.getElementById("select-form")

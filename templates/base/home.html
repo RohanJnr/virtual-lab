@@ -2,50 +2,64 @@
 {% load static %}
 {% block content %}
 
-<main class="bg-radial pt-40 pb-10">
-    <div class="w-4/5 px-10 mx-auto grid grid-cols-2 gap-20">
+<main class="bg-radial pt-60 pb-10">
+    <div class="rectangle-1"></div>
+    <div class="ellipse-1"></div>
+    <div class="w-4/5 px-5 mx-auto grid grid-cols-2 gap-20">
         <div class="animate__animated animate__fadeInDown">
-            <h1 class="text-white font-extrabold">India's First 24/7 Virtual Robotics Lab by an Educational Institution</h1>
+            <h1 class="text-white font-extrabold">India's First 24/7 Remote Robotics Lab by an Educational Institution
+            </h1>
             <p class="text-white font-bold">IEEE RAS of PES University and cRAIS Presents</p>
             <h1 class="font-extrabold gradient-text mb-0 pb-0">"ReRo Lab"</h1>
             <!-- <p class="text-white font-light m-0 p-0">Remote Robotics Lab</p> -->
-            <p class="font-bold mt-5 text-white">We are bringing the future of robotics and automation at your fingertips !</p>
+            <p class="font-bold mt-5 text-white">We are bringing the future of robotics and automation at your
+                fingertips !</p>
             <div class="my-20 w-full">
                 <a href="{% url 'robot:remote_lab' %}" class="">
                     <button class="btn-hover color-1 font-extrabold">
-                        <h4 class="text-white">Launch</h4>
+                        <h4 class="text-white m-0 p-0">Launch</h4>
                     </button>
                 </a>
             </div>
         </div>
         <div class="flex flex-col justify-start items-center gap-10" x-data="{ selected: 1 }">
             <div class="w-full h-full">
-                <img x-show="selected===1" src="{% static 'images/vl1.jpg' %}" alt="" class="rounded shadow-md w-full h-auto aspect-video">
-                <img x-show="selected===2" src="{% static 'images/vl2.jpg' %}" alt="" class="rounded shadow-md w-full h-auto aspect-video">
-                <img x-show="selected===3" src="{% static 'images/vl3.jpg' %}" alt="" class="rounded shadow-md w-full h-auto aspect-video">
+                <img x-show="selected===1" src="{% static 'images/vl1.jpg' %}" alt=""
+                    class="rounded shadow-md image-shadow w-full h-auto aspect-video">
+                <img x-show="selected===2" src="{% static 'images/vl2.jpg' %}" alt=""
+                    class="rounded shadow-md image-shadow w-full h-auto aspect-video">
+                <img x-show="selected===3" src="{% static 'images/vl3.jpg' %}" alt=""
+                    class="rounded shadow-md image-shadow w-full h-auto aspect-video">
             </div>
-            <div class="grid grid-cols-3 gap-10 animate__animated animate__backInRight">
-                <img src="{% static 'images/vl1.jpg' %}" alt="" class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]" x-on:click="selected = 1" 
-                :class="selected === 1 ? 'opacity-[0.4]': ''">
-                <img src="{% static 'images/vl2.jpg' %}" alt="" class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]" x-on:click="selected = 2" 
-                :class="selected === 2 ? 'opacity-[0.4]': ''">
-                <img src="{% static 'images/vl3.jpg' %}" alt="" class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]" x-on:click="selected = 3" 
-                :class="selected === 3 ? 'opacity-[0.4]': ''">
+            <div class="grid grid-cols-3 gap-10 animate__animated animate__backInRight my-5">
+                <img src="{% static 'images/vl1.jpg' %}" alt=""
+                    class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]"
+                    x-on:click="selected = 1" :class="selected === 1 ? 'opacity-[0.4]': ''">
+                <img src="{% static 'images/vl2.jpg' %}" alt=""
+                    class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]"
+                    x-on:click="selected = 2" :class="selected === 2 ? 'opacity-[0.4]': ''">
+                <img src="{% static 'images/vl3.jpg' %}" alt=""
+                    class="rounded shadow-md aspect-video cursor-pointer duration-300 ease-in hover:opacity-[0.4]"
+                    x-on:click="selected = 3" :class="selected === 3 ? 'opacity-[0.4]': ''">
             </div>
         </div>
     </div>
 </main>
 
-<section class="w-4/5 mx-auto py-20">
+<section class="w-4/5 mx-auto py-20 flex flex-col items-center justify-start">
     <h2 class="font-bold">What is the Remote Robotics Lab ?</h2>
     <p class="my-5 w-2/3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis expedita, facere fuga ipsa minus impedit fugiat, accusamus incidunt, repudiandae nisi reiciendis? Quia incidunt fuga maiores, laborum itaque iste quibusdam quos vel tempore? Pariatur nihil magni quod doloribus corporis amet.
+        The Virtual Lab is India's first 24/7 remote robotics lab established by an educational institution. The lab
+        offers an innovative way to provide students with hands-on experience in robotics and automation.
+        Anyone across the globe can control and test the robots from the comfort of their home. Students can learn about
+        robotics without the need for expensive hardware or physical lab space.
     </p>
     <p class="my-5 w-2/3">
-        The chapter has created the first virtual 24/7 Remote Robotics Lab in the country. This feat has never been achieved by any educational institute until now.
-    </p>
-    <p class="my-5 w-2/3">
-        The lab enables users from anywhere in the world to control the robots and run developed algorithms remotely, without needing to purchase any hardware. The lab offers a chance to experiment with various features and applications on real robots in a simulated environment with obstacles. The lab can be used for task testing and training in academia and research. The lab will be autonomous and available for use globally in the near future.
+        Students can conduct experiments, test robotic algorithms, and implement ROS libraries in real time by accessing the Virtual Lab.
+        The Virtual Lab has several practical applications in research and development. Researchers can use the lab to
+        test and refine their robotic algorithms, simulate real-world scenarios, and collaborate with colleagues across
+        the globe.
+
     </p>
 </section>
 
